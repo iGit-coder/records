@@ -1,2 +1,2 @@
 # records
-Recording some thing about basic
+Recording some thing about a basic
