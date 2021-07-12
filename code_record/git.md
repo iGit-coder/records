@@ -6,7 +6,7 @@
 >
 >  现在我们已经知道什么是repository（缩写repo）了，假如我们现在建立一个仓库（repo），那么在建立仓库的这个目录中有一个“.git”的文件夹。这个文件夹非常重要，所有的版本信息，更新记录，以及Git进行仓库管理的相关信息全部保存在这个文件夹里面。所以，不要修改/删除其中的文件，以免造成数据的丢失。
 >
-> ![](E:\md\iRecode\resources\git结构.png)
+
 >
 >  根据上面的图片，下面给出了每个部分的简要说明：
 >
@@ -20,15 +20,22 @@
 1. 下载地址：`https://git-scm.com/download/win`
 2. 下载github代码：`git clone https://github.com/cxinping/PyQt5.git`
 3. 上传本地代码：
-
+## 本地已存在
 ```shell
-cd iRecode #iRecode目录为在Github下载的，将所需上传文件复制到本目录
-git add . #把iRecode目录下的所有文件都添加进暂存区
-git config --global user.email "邮箱名"
-git config --global user.name "用户名"
-git commit -m "提交信息" #将暂存区中代码提交到本地版本库
-git push origin main # 将本地版本库推送到远程服务器，
-git push origin main # 将本地版本库推送到远程服务器，origin是远程主机名(默认)，main表示远程服务器上的main分支，分支名可以修改，只要githb上有就行
+cd records #records目录下是需要上传的项目
+git init #初始化git管理
+git add . #把records目录下的所有文件都添加进暂存区
+git commit -m 'records初次提交' #将暂存区的内容存到本地仓库
+git remote -v #查看本地远程库，初次查询应该是没有
+git remote add git@github.com:iGit-coder/jvscode.git #地址是github上ssh的地址
+git push origin master # 将本地版本库推送到远程服务器，origin是远程主机名(默认)，master表示远程服务器上的main分支，分支名可以修改，只要githb上有就行
+```
+## 本地不存在
+```shell
+1.可以先在github上创建一个对应仓库
+2.将仓库克隆到本地，克隆下来的文件夹就是被git管理的
+3.将需要上传的文件复制到克隆的文件夹里
+4.远程提交即可
 ```
 
 4. 上传本地更新的文件
